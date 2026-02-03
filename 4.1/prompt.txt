@@ -1,0 +1,11 @@
+Exercise 4-1
+⚫ Modify Matrix.h to let you add matrices
+⚫ Use operator overloading to make both + and += work
+⚫ To add two matrices, they both have to have the
+same number of rows and columns
+⚫ Just add the corresponding elements to get a
+new matrix with the same number of rows and
+columns
+⚫ See
+http://www.purplemath.com/modules/mtrxadd.ht
+m for an example
