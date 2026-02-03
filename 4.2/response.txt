@@ -1,0 +1,70 @@
+All of the original files were saved as O_<original name>. The tests were conducted by using the following CL build and 
+run commands:
+
+# Matrix (old & new)
+g++ -O3 -std=c++20 Matrix.cpp -o Matrix_new
+g++ -O3 -std=c++20 O_Matrix.cpp -o Matrix_old
+
+# PSMatrix 
+g++ -O3 -std=c++20 PSMatrix.cpp -o PSMatrix_new
+g++ -O3 -std=c++20 O_PSMatrix.cpp -o PSMatrix_old
+
+# OverloadMatrix 
+g++ -O3 -std=c++20 OverloadMatrix.cpp -o OverloadMatrix_new
+g++ -O3 -std=c++20 O_OverloadMatrix.cpp -o OverloadMatrix_old
+
+for i in {1..7}; do ./PSMatrix_old; done
+for i in {1..7}; do ./PSMatrix_new; done
+
+for i in {1..7}; do ./OverloadMatrix_old; done
+for i in {1..7}; do ./OverloadMatrix_new; done
+
+
+Here are the results:
+
+Matrix old Average:
+0.370917 seconds
+
+Matrix old Median:
+0.370917 seconds
+
+Matrix new Average:
+0.347604 seconds
+
+Matrix new Median:
+0.347604 seconds
+
+PSMatrix old Average:
+0.347798 seconds
+
+PSMatrix old Median:
+0.345213 seconds
+
+PSMatrix new Average:
+0.346383 seconds
+
+PSMatrix new Median:
+0.344705 seconds
+
+OverloadMatrix old Average:
+0.354081 seconds
+
+OverloadMatrix old Median:
+0.348300 seconds
+
+OverloadMatrix new Average:
+0.349153 seconds
+
+OverloadMatrix new Median:
+0.348017 seconds
+
+
+
+
+Conclusions:
+The standard Matrix implementations exhibited a modest performance benefit after introducing a 2x2 matrix determinant, 
+with a reduction in execution time of only a few miliseconds. In constrast, the PSMatrix and OverloadMatrix 
+implementations showed only marginal performance benefits, with differences at or below the milisecond level. These
+results suggest that while direct 2x2 determinant implementations can reduce overhead, their overall impact is limited
+and does not significantly impact the total runtime. As expected, the asymptotic time complexity of the operation
+remains the same regardless of the determinant implementation or algorithm.

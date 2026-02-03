@@ -1,0 +1,11 @@
+For each of the following programs, modify them to
+have a direct (i.e., specialized or overloaded
+implementation) of determinants for 2x2 matrices.
+⚫ Matrix
+⚫ PSMatrix
+⚫ OverloadMatrix
+⚫ The formula for the determinant of the 2x2 matrix m
+is
+m(0,0)*m(1,1) – m(1,0)*m(0,1)
+⚫ Test how much your code changed the execution
+time for the programs. What do you conclude?
