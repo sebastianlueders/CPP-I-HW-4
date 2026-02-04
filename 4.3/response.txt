@@ -1,0 +1,6 @@
+Since the std::for_each function works by passing the UnaryFunction by value (rather than by reference),
+the function does not actually modify maxf in place but actually returns a modified copy of maxf using
+the overloaded constructor "()" operation. I was able to fix this program by simply storing the returned
+copy of fmax as fmax. Therefore, this for_each line would repeatedly call the overloaded operator() on
+the items within the range of names from beginning to end, and end up with the maxLen as the max number
+of characters in any of the strings in names.
